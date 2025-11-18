@@ -206,7 +206,7 @@ const ChatInterface = ({ currentUser }) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Header */}
+      {/* Header - REMOVED LOGOUT BUTTON FROM HERE */}
       <div style={{ 
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         padding: '20px',
@@ -233,28 +233,7 @@ const ChatInterface = ({ currentUser }) => {
             </div>
           </div>
           
-          {/* Logout Button */}
-          {currentUser && (
-            <button
-              onClick={async () => {
-                await signOut(auth);
-                sessionStorage.removeItem('smartbiz_session_active');
-                window.location.reload();
-              }}
-              style={{
-                background: 'rgba(255,255,255,0.2)',
-                border: '1px solid rgba(255,255,255,0.3)',
-                color: 'white',
-                padding: '8px 16px',
-                borderRadius: '20px',
-                cursor: 'pointer',
-                fontSize: '12px',
-                fontWeight: 'bold'
-              }}
-            >
-              Logout
-            </button>
-          )}
+          {/* LOGOUT BUTTON REMOVED FROM HERE - Only one logout button in UserAuth */}
         </div>
       </div>
 
